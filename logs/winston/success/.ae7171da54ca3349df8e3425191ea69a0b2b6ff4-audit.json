@@ -1,0 +1,90 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\.ae7171da54ca3349df8e3425191ea69a0b2b6ff4-audit.json",
+    "files": [
+        {
+            "date": 1695820890447,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-09-27-19-success.log",
+            "hash": "0360d3409be592bd7498e63b712e976057c6c5e03271d289a4c849178b987d93"
+        },
+        {
+            "date": 1695873946062,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-09-28-10-success.log",
+            "hash": "f9cab461139a205911889809bc9840aebd5e6c74832e5effae54b0797110a300"
+        },
+        {
+            "date": 1695982749615,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-09-29-16-success.log",
+            "hash": "ec295728f5badc02a469b521d9b181476dfd0a2fb6176ef75703d600821b2339"
+        },
+        {
+            "date": 1696328919164,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-03-16-success.log",
+            "hash": "1d08da485e9232aa810adb0084a492f2bc953d9a92a1048d2c31766f2710fe7d"
+        },
+        {
+            "date": 1696334551348,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-03-18-success.log",
+            "hash": "c585e98021e4994e4c1630e6293c025082b5926ae27ed2b4db9ff8f887bafe34"
+        },
+        {
+            "date": 1696399120816,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-04-11-success.log",
+            "hash": "28db157b89cfaaa7625b3e821978d849af93a4f44d507494f646ff7eea50904a"
+        },
+        {
+            "date": 1696487003686,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-05-12-success.log",
+            "hash": "7b20baf6a4d191c46d59e49a28b4827c002e5bbd4eb1c89ba5bc6f6264714db3"
+        },
+        {
+            "date": 1696502383432,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-05-16-success.log",
+            "hash": "3ed35e8cda0198a255134be4ee9ed49fdc4b2745e3c1858ee175d2556af93796"
+        },
+        {
+            "date": 1696504739158,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-05-17-success.log",
+            "hash": "463fd9d30c7dce396b7c18635381392a107a289be5f81b67799bc8be75006c5f"
+        },
+        {
+            "date": 1696534899887,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-06-01-success.log",
+            "hash": "1455ed1078f11869715592df4e5a6e3549d853f6a190ae312a689b66b6eeda55"
+        },
+        {
+            "date": 1696536963034,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-06-02-success.log",
+            "hash": "18d718c53afcb3f2a28a2dcaec01e21153e759da4d0d55fecc6ad14ec61293d8"
+        },
+        {
+            "date": 1696597166036,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-06-18-success.log",
+            "hash": "5f42f0c9ee2a0c9ee244611e418637e16badd64d59088e39bb2a59b461fac291"
+        },
+        {
+            "date": 1696678378629,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-07-17-success.log",
+            "hash": "fe17c77daf9f3d0d8829e99cbe978896f1e813f1a27f546ffc801ec229c5685f"
+        },
+        {
+            "date": 1696859514493,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-09-19-success.log",
+            "hash": "3f734cf8a8af2756c04894e18c020a84532e9b7afc440e1e326d62c536f2bd98"
+        },
+        {
+            "date": 1696861108200,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-09-20-success.log",
+            "hash": "ff2902bff03c43b9cd2fef79a5afd7bedf3dc711df3328e9390687046e67fca5"
+        },
+        {
+            "date": 1696958883867,
+            "name": "D:\\WEB\\Level-2\\Milestone-3-Be-A-NoSQL-Braniac\\University-Management-auth-server\\logs\\winston\\success\\UMS-2023-10-10-23-success.log",
+            "hash": "f7dd10b924cc11cc68d60b17c902859a546d2d7f0e1274ffd4e93b0c0e25da99"
+        }
+    ],
+    "hashType": "sha256"
+}
