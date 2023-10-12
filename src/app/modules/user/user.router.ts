@@ -2,24 +2,33 @@ import express from 'express';
 import { UserController } from './user.controller';
 import validateRequest from '../../middlewares/validateRequest';
 import { UserValidation } from './user.validation';
+import auth from '../../middlewares/auth';
+import { ENUM_USER_ROLE } from '../../../enums/user';
 const router = express.Router();
 
 router.post(
-  '/create-student',
-  validateRequest(UserValidation.createStudentZodSchema),
-  UserController.createStudent
+  '/create-user',
+  validateRequest(UserValidation.createUserZodSchema),
+  UserController.createUser
 );
 
-router.post(
-  '/create-faculty',
-  validateRequest(UserValidation.createFacultyZodSchema),
-  UserController.createFaculty
+router.get(
+  '/profile',
+  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.USER),
+  UserController.getProfile
 );
 
-router.post(
-  '/create-admin',
-  validateRequest(UserValidation.createAdminZodSchema),
-  UserController.createAdmin
+router.get(
+  '/all-users',
+  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
+  UserController.getAllUsers
+);
+
+router.patch(
+  '/update-user/:id',
+  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.USER),
+  validateRequest(UserValidation.updateUserZodSchema),
+  UserController.updateUser
 );
 
 export const UserRoutes = router;

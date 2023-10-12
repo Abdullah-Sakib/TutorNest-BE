@@ -3,41 +3,34 @@ import { Schema, model } from 'mongoose';
 import { IUser, IUserMethods, UserModel } from './user.interface';
 import bcrypt from 'bcrypt';
 import config from '../../../config';
+import { ENUM_USER_ROLE } from '../../../enums/user';
 
 const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
   {
-    id: {
+    first_name: {
+      type: String,
+      required: true,
+    },
+    last_name: {
+      type: String,
+      required: true,
+    },
+    email: {
       type: String,
       required: true,
       unique: true,
     },
     role: {
       type: String,
-      required: true,
+      default: ENUM_USER_ROLE.USER,
     },
     password: {
       type: String,
       required: true,
       select: 0,
     },
-    needsPasswordChange: {
-      type: Boolean,
-      default: true,
-    },
-    passwordChangedAt: {
-      type: Date,
-    },
-    student: {
-      type: Schema.Types.ObjectId,
-      ref: 'Student',
-    },
-    faculty: {
-      type: Schema.Types.ObjectId,
-      ref: 'Faculty',
-    },
-    admin: {
-      type: Schema.Types.ObjectId,
-      ref: 'Admin',
+    profileImage: {
+      type: String,
     },
   },
   {
@@ -49,15 +42,9 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
 );
 
 userSchema.methods.isUserExists = async function (
-  id: string
-): Promise<Pick<
-  IUser,
-  'id' | 'role' | 'needsPasswordChange' | 'password'
-> | null> {
-  return await User.findOne(
-    { id },
-    { id: 1, password: 1, role: 1, needsPasswordChange: 1 }
-  );
+  email: string
+): Promise<Pick<IUser, 'email' | 'role' | 'password'> | null> {
+  return await User.findOne({ email }, { id: 1, password: 1, role: 1 });
 };
 
 userSchema.methods.isPasswordMatched = async function (

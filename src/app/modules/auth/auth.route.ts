@@ -20,12 +20,7 @@ router.post(
 
 router.post(
   '/change-password',
-  auth(
-    ENUM_USER_ROLE.STUDENT,
-    ENUM_USER_ROLE.FACULTY,
-    ENUM_USER_ROLE.ADMIN,
-    ENUM_USER_ROLE.SUPER_ADMIN
-  ),
+  auth(ENUM_USER_ROLE.USER, ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
   validateRequest(AuthValidation.changePasswordZodSchema),
   AuthController.changePassword
 );

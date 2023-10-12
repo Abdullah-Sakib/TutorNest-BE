@@ -13,11 +13,11 @@ import { jwtHelper } from '../../../helper/jwtHelper';
 import bcrypt from 'bcrypt';
 
 const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
-  const { id, password } = payload;
+  const { email, password } = payload;
   // instance of user
   const user = new User();
 
-  const isUserExist = await user.isUserExists(id);
+  const isUserExist = await user.isUserExists(email);
 
   if (!isUserExist) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User does not exist');
@@ -30,11 +30,11 @@ const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
     throw new ApiError(httpStatus.UNAUTHORIZED, 'password is incorrect');
   }
 
-  const { id: userId, role, needsPasswordChange } = isUserExist;
+  const { email: userEmail, role } = isUserExist;
 
   const accessToken = jwtHelper.createToken(
     {
-      id: userId,
+      email: userEmail,
       role: role,
     },
     config.jwt.secret as Secret,
@@ -43,7 +43,7 @@ const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
 
   const refreshToken = jwtHelper.createToken(
     {
-      id: userId,
+      id: userEmail,
       role: role,
     },
     config.jwt.refresh_secret as Secret,
@@ -53,7 +53,6 @@ const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   return {
     accessToken,
     refreshToken,
-    needsPasswordChange,
   };
 };
 
@@ -68,12 +67,12 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
     throw new ApiError(httpStatus.FORBIDDEN, 'Invalid refresh token');
   }
 
-  const { id } = verifiedToken;
+  const { email } = verifiedToken;
 
   // instance of user
   const user = new User();
 
-  const isUserExist = await user.isUserExists(id);
+  const isUserExist = await user.isUserExists(email);
 
   if (!isUserExist) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User does not exist');
@@ -81,7 +80,7 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
 
   const newAccessToken = jwtHelper.createToken(
     {
-      id: isUserExist.id,
+      email: isUserExist.email,
       role: isUserExist.role,
     },
     config.jwt.secret as Secret,
@@ -99,7 +98,7 @@ const changePassword = async (
 ): Promise<void> => {
   const user = new User();
 
-  const isUserExist = await user.isUserExists(userData?.id);
+  const isUserExist = await user.isUserExists(userData?.email);
 
   const { oldPassword, newPassword } = payload;
 
@@ -122,11 +121,12 @@ const changePassword = async (
 
   const updatedData = {
     password: newHashedPassword,
-    needsPasswordChange: false,
-    passwordChangedAt: new Date(),
   };
 
-  await User.findOneAndUpdate({ id: userData && userData.id }, updatedData);
+  await User.findOneAndUpdate(
+    { email: userData && userData.email },
+    updatedData
+  );
 };
 
 export const AuthService = {

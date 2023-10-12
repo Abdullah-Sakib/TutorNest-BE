@@ -5,9 +5,9 @@ import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
 import { IUser } from './user.interface';
 
-const createStudent: RequestHandler = catchAsync(async (req, res) => {
-  const { student, ...user } = req.body;
-  const result = await UserService.createStudent(student, user);
+const createUser: RequestHandler = catchAsync(async (req, res) => {
+  const userData = req.body;
+  const result = await UserService.createUser(userData);
 
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,
@@ -17,34 +17,45 @@ const createStudent: RequestHandler = catchAsync(async (req, res) => {
   });
 });
 
-const createFaculty: RequestHandler = catchAsync(async (req, res) => {
-  const { faculty, ...userData } = req.body;
-
-  const result = await UserService.createFaculty(faculty, userData);
+const getProfile: RequestHandler = catchAsync(async (req, res) => {
+  const user = req?.user;
+  const result = await UserService.getProfile(user);
 
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'faculty created successfully',
+    message: 'profile retrived successfully',
     data: result,
   });
 });
 
-const createAdmin: RequestHandler = catchAsync(async (req, res) => {
-  const { admin, ...adminData } = req.body;
+const getAllUsers: RequestHandler = catchAsync(async (req, res) => {
+  const result = await UserService.getAllUsers();
 
-  const result = await UserService.createAdmin(admin, adminData);
+  sendResponse<IUser[]>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'all users retrived successfully',
+    data: result,
+  });
+});
+
+const updateUser: RequestHandler = catchAsync(async (req, res) => {
+  const userData = req.body;
+  const userId = req.params.id;
+  const result = await UserService.updateUser(userId, userData);
 
   sendResponse<IUser>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Admin created successfully',
+    message: 'user updated successfully',
     data: result,
   });
 });
 
 export const UserController = {
-  createStudent,
-  createFaculty,
-  createAdmin,
+  createUser,
+  getProfile,
+  getAllUsers,
+  updateUser,
 };
