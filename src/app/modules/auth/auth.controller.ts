@@ -34,7 +34,7 @@ const refreshToken: RequestHandler = catchAsync(async (req, res) => {
   sendResponse<IRefreshTokenResponse>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'user login successfully',
+    message: 'new access token created successfully',
     data: result,
   });
 });

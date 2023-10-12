@@ -1,5 +1,4 @@
 import { Schema, model } from 'mongoose';
-import { bloodGroup, gender } from '../student/student.constants';
 import { AdminModel, IAdmin } from './admin.interface';
 
 export const adminSchema = new Schema<IAdmin, AdminModel>(
@@ -30,11 +29,9 @@ export const adminSchema = new Schema<IAdmin, AdminModel>(
     },
     gender: {
       type: String,
-      enum: gender,
     },
     bloodGroup: {
       type: String,
-      enum: bloodGroup,
     },
     email: {
       type: String,

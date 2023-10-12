@@ -4,6 +4,7 @@ import { IUser, IUserMethods, UserModel } from './user.interface';
 import bcrypt from 'bcrypt';
 import config from '../../../config';
 import { ENUM_USER_ROLE } from '../../../enums/user';
+import { roles } from './user.constants';
 
 const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
   {
@@ -22,6 +23,7 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
     },
     role: {
       type: String,
+      enum: roles,
       default: ENUM_USER_ROLE.USER,
     },
     password: {
@@ -44,7 +46,7 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
 userSchema.methods.isUserExists = async function (
   email: string
 ): Promise<Pick<IUser, 'email' | 'role' | 'password'> | null> {
-  return await User.findOne({ email }, { id: 1, password: 1, role: 1 });
+  return await User.findOne({ email }, { email: 1, password: 1, role: 1 });
 };
 
 userSchema.methods.isPasswordMatched = async function (

@@ -1,13 +1,13 @@
 import { z } from 'zod';
+import { roles } from './user.constants';
 
 // Define the Zod schema for creating a user
 const createUserZodSchema = z.object({
   body: z.object({
-    role: z.string().optional(),
-    firstName: z.string({
+    first_name: z.string({
       required_error: 'First name is required',
     }),
-    lastName: z.string({
+    last_name: z.string({
       required_error: 'Last name is required',
     }),
     email: z
@@ -15,6 +15,10 @@ const createUserZodSchema = z.object({
         required_error: 'Email is required',
       })
       .email(),
+    password: z.string({
+      required_error: 'Password is required',
+    }),
+    role: z.enum([...roles] as [string, ...string[]]).optional(),
   }),
 });
 

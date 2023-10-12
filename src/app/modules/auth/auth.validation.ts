@@ -3,7 +3,7 @@ import { z } from 'zod';
 // Define the Zod schema for login user
 const loginUserZodSchema = z.object({
   body: z.object({
-    id: z.string({
+    email: z.string({
       required_error: 'id is required',
     }),
     password: z.string({

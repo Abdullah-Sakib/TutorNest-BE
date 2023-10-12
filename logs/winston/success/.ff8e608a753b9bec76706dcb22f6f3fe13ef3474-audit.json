@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\.ff8e608a753b9bec76706dcb22f6f3fe13ef3474-audit.json",
+    "files": [
+        {
+            "date": 1697096886499,
+            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-13-success.log",
+            "hash": "4417c58ffc6ef36fdd59294384cb993a68a12e28ecabd96dc69bf84aaacc7895"
+        },
+        {
+            "date": 1697097759421,
+            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-14-success.log",
+            "hash": "3ab076637aa63d81c7d98250719f8d116769eff866432a7866064e4a2999782e"
+        }
+    ],
+    "hashType": "sha256"
+}
