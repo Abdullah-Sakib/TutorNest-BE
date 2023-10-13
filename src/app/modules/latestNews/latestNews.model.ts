@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
-import { IBlog, BlogModel } from './blog.interface';
+import { ILatestNews, LatestNewsModel } from './latestNews.interface';
 
-const BlogSchema = new Schema<IBlog, BlogModel>(
+const LatestNewsSchema = new Schema<ILatestNews, LatestNewsModel>(
   {
     title: {
       type: String,
@@ -24,4 +24,7 @@ const BlogSchema = new Schema<IBlog, BlogModel>(
   }
 );
 
-export const Blog = model<IBlog, BlogModel>('Blog', BlogSchema);
+export const LatestNews = model<ILatestNews, LatestNewsModel>(
+  'LatestNews',
+  LatestNewsSchema
+);

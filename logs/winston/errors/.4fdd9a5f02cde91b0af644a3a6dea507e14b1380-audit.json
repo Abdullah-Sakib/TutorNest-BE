@@ -1,45 +1,45 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\.4fdd9a5f02cde91b0af644a3a6dea507e14b1380-audit.json",
+  "files": [
+    {
+      "date": 1697096886507,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-13-errors.log",
+      "hash": "a412182904867763cc38e822dbc15b85f3aea7c42956a2f82d0aafabda1ab5bc"
     },
-    "auditLog": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\.4fdd9a5f02cde91b0af644a3a6dea507e14b1380-audit.json",
-    "files": [
-        {
-            "date": 1697096886507,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-13-errors.log",
-            "hash": "a412182904867763cc38e822dbc15b85f3aea7c42956a2f82d0aafabda1ab5bc"
-        },
-        {
-            "date": 1697097759432,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-14-errors.log",
-            "hash": "4f796198f51ffdeaa2207117ef8535b0c3d9063acb1bbec4e8fd86e632ea104d"
-        },
-        {
-            "date": 1697103976594,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-15-errors.log",
-            "hash": "556553ef3874e592282e0379085fc5b42cfc66661e80dd84d83a8616ddb328e6"
-        },
-        {
-            "date": 1697105436789,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-16-errors.log",
-            "hash": "7c514c0f3f6f98aeacba0ed3c2daac76b63e4610156fa24adddade922cf83f7f"
-        },
-        {
-            "date": 1697120913428,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-20-errors.log",
-            "hash": "ba8219de4600108cc9289a15cefd821ce8a69af8d20634b352267390cb2c6663"
-        },
-        {
-            "date": 1697123545162,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-21-errors.log",
-            "hash": "f316b5dd1321c97768a3adec395566e210a166f5c7eb1ebb5947f4c6939ba57a"
-        },
-        {
-            "date": 1697129954737,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-22-errors.log",
-            "hash": "009bcca4444b4e6ff02098718e4e5afcc23ea51e776f442e9a7b79be69eb04c1"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1697097759432,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-14-errors.log",
+      "hash": "4f796198f51ffdeaa2207117ef8535b0c3d9063acb1bbec4e8fd86e632ea104d"
+    },
+    {
+      "date": 1697103976594,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-15-errors.log",
+      "hash": "556553ef3874e592282e0379085fc5b42cfc66661e80dd84d83a8616ddb328e6"
+    },
+    {
+      "date": 1697105436789,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-16-errors.log",
+      "hash": "7c514c0f3f6f98aeacba0ed3c2daac76b63e4610156fa24adddade922cf83f7f"
+    },
+    {
+      "date": 1697120913428,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-20-errors.log",
+      "hash": "ba8219de4600108cc9289a15cefd821ce8a69af8d20634b352267390cb2c6663"
+    },
+    {
+      "date": 1697123545162,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-21-errors.log",
+      "hash": "f316b5dd1321c97768a3adec395566e210a166f5c7eb1ebb5947f4c6939ba57a"
+    },
+    {
+      "date": 1697129954737,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\errors\\UMS-2023-10-12-22-errors.log",
+      "hash": "009bcca4444b4e6ff02098718e4e5afcc23ea51e776f442e9a7b79be69eb04c1"
+    }
+  ],
+  "hashType": "sha256"
 }

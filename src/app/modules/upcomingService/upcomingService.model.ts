@@ -1,7 +1,13 @@
 import { Schema, model } from 'mongoose';
-import { IBlog, BlogModel } from './blog.interface';
+import {
+  IUpcomingService,
+  UpcomingServiceModel,
+} from './upcomingService.interface';
 
-const BlogSchema = new Schema<IBlog, BlogModel>(
+const UpcomingServiceSchema = new Schema<
+  IUpcomingService,
+  UpcomingServiceModel
+>(
   {
     title: {
       type: String,
@@ -24,4 +30,7 @@ const BlogSchema = new Schema<IBlog, BlogModel>(
   }
 );
 
-export const Blog = model<IBlog, BlogModel>('Blog', BlogSchema);
+export const UpcomingService = model<IUpcomingService, UpcomingServiceModel>(
+  'UpcomingService',
+  UpcomingServiceSchema
+);

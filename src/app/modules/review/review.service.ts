@@ -82,7 +82,7 @@ const getAllReviews = async (
 
 // Get Single Review
 const getSingleReview = async (id: string): Promise<IReview | null> => {
-  const result = await Review.findById({ _id: id });
+  const result = await Review.findById(id);
 
   return result;
 };

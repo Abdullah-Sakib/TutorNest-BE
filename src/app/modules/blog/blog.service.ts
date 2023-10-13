@@ -54,7 +54,7 @@ const getAllBlogs = async (
 
 // Get Single Blog
 const getSingleBlog = async (id: string): Promise<IBlog | null> => {
-  const result = await Blog.findById({ _id: id });
+  const result = await Blog.findById(id);
 
   return result;
 };
