@@ -88,8 +88,8 @@ const getSingleFeedback = async (id: string): Promise<IFeedback | null> => {
 };
 
 // Get Single user's Feedback
-const getMyFeedback = async (email: string): Promise<IFeedback | null> => {
-  const result = await Feedback.findById({ email });
+const getMyFeedback = async (email: string): Promise<IFeedback[] | null> => {
+  const result = await Feedback.find({ email: email });
 
   return result;
 };

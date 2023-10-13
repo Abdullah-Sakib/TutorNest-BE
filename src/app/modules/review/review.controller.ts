@@ -73,11 +73,11 @@ const getSingleReview: RequestHandler = catchAsync(async (req, res) => {
 
 // Get single Review by id
 const getSingleTutorReview: RequestHandler = catchAsync(async (req, res) => {
-  const id = req.params.id;
+  const id = req.params.tutorId;
   const result = await ReviewService.getSingleTutorReview(id);
 
   // Send Response
-  sendResponse<IReview>(res, {
+  sendResponse<IReview[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Get Single Review Successfully',

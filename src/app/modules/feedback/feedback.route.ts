@@ -8,10 +8,16 @@ const router = express.Router();
 
 // Routes
 router.post(
-  '/create-feedback',
+  '/',
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.USER, ENUM_USER_ROLE.SUPER_ADMIN),
   validateRequest(FeedbackValidation.createFeedbackZodValidation),
   FeedbackController.createFeedback
+);
+
+router.get(
+  '/my-feedbacks',
+  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.USER),
+  FeedbackController.getMyFeedback
 );
 
 router.get(
@@ -31,12 +37,6 @@ router.patch(
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.USER),
   validateRequest(FeedbackValidation.updateFeedbackZodValidation),
   FeedbackController.updateFeedback
-);
-
-router.get(
-  '/my-feedbacks',
-  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.USER),
-  FeedbackController.getSingleFeedback
 );
 
 router.get(

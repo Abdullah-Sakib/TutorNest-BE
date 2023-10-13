@@ -25,12 +25,7 @@ const createBooking = async (
   let result;
   const session = await mongoose.startSession();
   try {
-    const booking = new Booking(payload); // Create a new Booking document
-    result = await booking.save({ session }); // Save it to the database
-
-    if (!result) {
-      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to book');
-    }
+    await session.startTransaction();
 
     // Find the tutor data by its unique ID
     const tutor = await Tutor.findById(payload?.tutorId);
@@ -44,23 +39,34 @@ const createBooking = async (
       slot => slot.slot === payload.booked_slot
     );
 
+    if (slotToUpdate?.status === 'booked') {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'slot already booked');
+    }
+
     if (slotToUpdate) {
       slotToUpdate.status = 'booked';
     } else {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Slot not found');
     }
 
-    // Save the updated service data
+    const booking = new Booking(payload); // Create a new Booking document
+    result = await booking.save({ session });
+
+    if (!result) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to book');
+    }
+
+    // Save the updated tutor data
     await tutor.save({ session });
 
     // Commit transaction and end session
     await session.commitTransaction();
     session.endSession();
-  } catch (error) {
+  } catch (error: any) {
     // abort transaction and end session
     await session.abortTransaction();
     await session.endSession();
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Booking failed');
+    throw new ApiError(httpStatus.BAD_REQUEST, error.message);
   }
   return result;
 };
@@ -116,11 +122,11 @@ const cancelBooking = async (bookingId: string, user: any) => {
     // Commit transaction and end session
     await session.commitTransaction();
     session.endSession();
-  } catch (error) {
+  } catch (error: any) {
     // Abort transaction and end session
     await session.abortTransaction();
     session.endSession();
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Cancellation failed');
+    throw new ApiError(httpStatus.BAD_REQUEST, error?.message);
   }
 
   return cancelationData;

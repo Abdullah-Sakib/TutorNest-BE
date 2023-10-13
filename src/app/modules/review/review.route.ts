@@ -13,7 +13,7 @@ router.post(
 
 router.get('/:id', ReviewController.getSingleReview);
 
-router.get('/:tutorId', ReviewController.getSingleTutorReview);
+router.get('/:tutorId/tutor-reviews', ReviewController.getSingleTutorReview);
 
 router.delete('/:id', ReviewController.deleteReview);
 

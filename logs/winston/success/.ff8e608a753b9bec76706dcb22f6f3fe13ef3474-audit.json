@@ -44,6 +44,21 @@
             "date": 1697215100492,
             "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-13-22-success.log",
             "hash": "16ced72d95454a90f198f5c5052bc4099c4796356deff7f10eee821be3879bde"
+        },
+        {
+            "date": 1697217815153,
+            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-13-23-success.log",
+            "hash": "9e524de19087cc4873f1a082ee67360acbc29c4c2b4edb0dac8a269dcb8ecb60"
+        },
+        {
+            "date": 1697220126613,
+            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-00-success.log",
+            "hash": "f37960f7bbaec0c2c5875e1e43c927d27aa9542a2d7016a6d442e0feb444d3c3"
+        },
+        {
+            "date": 1697223646157,
+            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-01-success.log",
+            "hash": "26d927d54a094cc59a3b819820140367f6c63bcbc7575dfd5ee11065285b7c17"
         }
     ],
     "hashType": "sha256"

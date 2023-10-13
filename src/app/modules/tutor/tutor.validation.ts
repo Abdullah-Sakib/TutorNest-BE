@@ -36,8 +36,11 @@ const createTutorZodValidation = z.object({
       })
     ),
     available_slots: z.array(
-      z.string({
-        required_error: 'available_slots are required',
+      z.object({
+        slot: z.string({
+          required_error: 'slot is required',
+        }),
+        status: z.string().optional(),
       })
     ),
     category: z.enum([...categories] as [string, ...string[]], {
@@ -58,7 +61,16 @@ const updateTutorZodValidation = z.object({
     description: z.string().optional(),
     fee: z.number().optional(),
     subjects: z.array(z.string()).optional(),
-    available_slots: z.array(z.string()).optional(),
+    available_slots: z
+      .array(
+        z.object({
+          slot: z.string({
+            required_error: 'slot is required',
+          }),
+          status: z.string().optional(),
+        })
+      )
+      .optional(),
     category: z.enum([...categories] as [string, ...string[]]).optional(),
   }),
 });

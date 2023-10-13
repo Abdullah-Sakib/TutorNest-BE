@@ -11,8 +11,7 @@ import { ITutor } from '../tutor/tutor.interface';
 const createAddToCart: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     const user = req.user;
-
-    const { ...tutorId } = req.body;
+    const { tutorId } = req.body;
 
     const result = await AddToCartService.createAddToCart(tutorId, user);
 
@@ -46,14 +45,14 @@ const getAllAddToCarts: RequestHandler = catchAsync(
 // Delete AddToCart
 const removeItemAddToCart: RequestHandler = catchAsync(async (req, res) => {
   const user = req.user;
-  const id = req.params.id;
+  const { tutorId } = req.body;
 
-  const result = await AddToCartService.removeItemAddToCart(id, user);
+  const result = await AddToCartService.removeItemAddToCart(user, tutorId);
 
   sendResponse<IAddToCart>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'AddToCart deleted successfully',
+    message: 'tutor removed from cart successfully',
     data: result,
   });
 });

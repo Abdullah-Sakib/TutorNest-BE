@@ -14,13 +14,17 @@ router.post(
   AddToCartController.createAddToCart
 );
 
-router.delete(
-  '/:id',
+router.patch(
+  '/',
   auth(ENUM_USER_ROLE.USER, ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
   validateRequest(AddToCartValidation.createAndDeleteAddToCartZodValidation),
   AddToCartController.removeItemAddToCart
 );
 
-router.get('/', AddToCartController.getAllAddToCarts);
+router.get(
+  '/',
+  auth(ENUM_USER_ROLE.USER, ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
+  AddToCartController.getAllAddToCarts
+);
 
 export const AddToCartRoutes = router;

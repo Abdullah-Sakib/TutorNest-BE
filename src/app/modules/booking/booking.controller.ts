@@ -26,6 +26,23 @@ const createBooking: RequestHandler = catchAsync(
     });
   }
 );
+// cancel Booking
+const cancelBooking: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const user = req.user;
+    const bookingId = req.params.bookingId;
+
+    const result = await BookingService.cancelBooking(bookingId, user);
+
+    // Send Response
+    sendResponse<IBooking>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Booking cancelled Successfully',
+      data: result,
+    });
+  }
+);
 
 // Get all Bookings
 const getAllBookings: RequestHandler = catchAsync(
@@ -112,6 +129,7 @@ const deleteBooking: RequestHandler = catchAsync(async (req, res) => {
 
 export const BookingController = {
   createBooking,
+  cancelBooking,
   getAllBookings,
   getSingleBooking,
   getSingleUsersBooking,

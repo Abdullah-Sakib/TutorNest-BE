@@ -88,8 +88,8 @@ const getSingleReview = async (id: string): Promise<IReview | null> => {
 };
 
 // Get Single tutor Review
-const getSingleTutorReview = async (id: string): Promise<IReview | null> => {
-  const result = await Review.findById({ tutorId: id });
+const getSingleTutorReview = async (id: string): Promise<IReview[] | null> => {
+  const result = await Review.find({ tutorId: id });
 
   return result;
 };

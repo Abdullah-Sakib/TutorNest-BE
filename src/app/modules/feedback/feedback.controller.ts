@@ -72,7 +72,7 @@ const getMyFeedback: RequestHandler = catchAsync(
     const result = await FeedbackService.getMyFeedback(user?.email);
 
     // Send Response
-    sendResponse<IFeedback>(res, {
+    sendResponse<IFeedback[]>(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'Single User Feedbacks retrived Successfully',
