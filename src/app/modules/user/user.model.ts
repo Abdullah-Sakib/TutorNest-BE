@@ -45,7 +45,7 @@ const userSchema = new Schema<IUser, Record<string, never>, IUserMethods>(
 
 userSchema.methods.isUserExists = async function (
   email: string
-): Promise<Pick<IUser, 'email' | 'role' | 'password'> | null> {
+): Promise<Pick<IUser, '_id' | 'email' | 'role' | 'password'> | null> {
   return await User.findOne({ email }, { email: 1, password: 1, role: 1 });
 };
 

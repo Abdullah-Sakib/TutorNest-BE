@@ -30,10 +30,11 @@ const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
     throw new ApiError(httpStatus.UNAUTHORIZED, 'password is incorrect');
   }
 
-  const { email: userEmail, role } = isUserExist;
+  const { _id, email: userEmail, role } = isUserExist;
 
   const accessToken = jwtHelper.createToken(
     {
+      id: _id,
       email: userEmail,
       role: role,
     },

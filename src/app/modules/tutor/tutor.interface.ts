@@ -11,7 +11,10 @@ export type ITutor = {
   description: string;
   fee: number;
   subjects: string[];
-  available_slots: string[];
+  available_slots: {
+    slot: string;
+    status: string;
+  }[];
   category: string;
 };
 
@@ -20,5 +23,8 @@ export type TutorModel = Model<ITutor, Record<string, unknown>>;
 
 export type ITutorFilters = {
   searchTerm?: string;
-  message?: string;
+  name?: string;
+  location?: string;
+  category?: string;
+  subject?: string;
 };

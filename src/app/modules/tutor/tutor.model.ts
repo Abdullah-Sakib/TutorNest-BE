@@ -49,8 +49,14 @@ const TutorSchema = new Schema<ITutor, TutorModel>(
     ],
     available_slots: [
       {
-        type: String,
-        required: [true, 'available_slots is missing!'],
+        slot: {
+          type: String,
+          required: [true, 'slot is missing!'],
+        },
+        status: {
+          type: String,
+          default: 'pending',
+        },
       },
     ],
     category: {
