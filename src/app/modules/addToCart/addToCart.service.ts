@@ -7,6 +7,8 @@ import httpStatus from 'http-status';
 import { User } from '../user/user.model';
 import ApiError from '../../../errors/ApiError';
 import { JwtPayload } from 'jsonwebtoken';
+import { Tutor } from '../tutor/tutor.model';
+import { ITutor } from '../tutor/tutor.interface';
 
 const createAddToCart = async (
   tutorId: string,
@@ -37,16 +39,14 @@ const createAddToCart = async (
 };
 
 // Get All AddToCarts (can also filter)
-const getAllAddToCarts = async (
-  user: JwtPayload | null
-): Promise<IAddToCart | null> => {
+const getAllAddToCarts = async (user: JwtPayload | null): Promise<ITutor[]> => {
   const addToCartItems = await AddToCart.findOne({ email: user?.email });
 
-  // const allTutors = await Tutor.find({
-  //   _id: { $in: addToCartItems?.tutorIds },
-  // });
+  const allTutors = await Tutor.find({
+    _id: { $in: addToCartItems?.tutorIds },
+  });
 
-  return addToCartItems;
+  return allTutors;
 };
 
 const removeItemAddToCart = async (

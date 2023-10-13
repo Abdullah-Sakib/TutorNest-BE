@@ -7,26 +7,15 @@ import httpStatus from 'http-status';
 import { IFeedback } from './feedback.interface';
 import { feedbackFilterableFields } from './feedback.constants';
 import { paginationFields } from '../../../constants/pagination';
-import { Secret } from 'jsonwebtoken';
-import config from '../../../config';
 import { pick } from '../../../shared/pick';
-import { jwtHelper } from '../../../helper/jwtHelper';
 
 // Create Feedback
 const createFeedback: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
-    const token: any = req.headers.authorization;
-    const verifiedUser = jwtHelper.verifyToken(
-      token,
-      config.jwt.secret as Secret
-    );
-
+    const user = req.user;
     const { ...feedbackData } = req.body;
 
-    const result = await FeedbackService.createFeedback(
-      feedbackData,
-      verifiedUser
-    );
+    const result = await FeedbackService.createFeedback(feedbackData, user);
 
     // Send Response
     sendResponse<IFeedback>(res, {
@@ -86,7 +75,7 @@ const getMyFeedback: RequestHandler = catchAsync(
     sendResponse<IFeedback>(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Get Single Feedback Successfully',
+      message: 'Single User Feedbacks retrived Successfully',
       data: result,
     });
   }

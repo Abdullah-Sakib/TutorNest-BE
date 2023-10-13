@@ -1,43 +1,43 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-console */
 import { SortOrder } from 'mongoose';
-import { IFeedback, IFeedbackFilters } from './feedback.interface';
-import { Feedback } from './feedback.model';
+import { ITutor, ITutorFilters } from './tutor.interface';
+import { Tutor } from './tutor.model';
 import httpStatus from 'http-status';
 import { IPaginationOptions } from '../../../interfaces/pagination';
-import { feedbackSearchableFields } from './feedback.constants';
+import { tutorSearchableFields } from './tutor.constants';
 import { IGenericResponse } from '../../../interfaces/common';
 import { User } from '../user/user.model';
 import { paginationHelper } from '../../../helper/paginationHelper';
 import ApiError from '../../../errors/ApiError';
 
-// Create Feedback
-const createFeedback = async (
-  payload: IFeedback,
+// Create Tutor
+const createTutor = async (
+  payload: ITutor,
   verifiedUser: any
-): Promise<IFeedback | null> => {
+): Promise<ITutor | null> => {
   const user = await User.find({ email: verifiedUser.email });
   if (user.length === 0) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
   }
 
-  const result = await Feedback.create(payload);
+  const result = await Tutor.create(payload);
   return result;
 };
 
-// Get All Feedbacks (can also filter)
-const getAllFeedbacks = async (
-  filters: IFeedbackFilters,
+// Get All Tutors (can also filter)
+const getAllTutors = async (
+  filters: ITutorFilters,
   paginationOptions: IPaginationOptions
-): Promise<IGenericResponse<IFeedback[]>> => {
+): Promise<IGenericResponse<ITutor[]>> => {
   // Try not to use any
   const { searchTerm, ...filtersData } = filters;
 
-  const andConditions = []; // Try not to use any
+  const andConditions = [];
 
   if (searchTerm) {
     andConditions?.push({
-      $or: feedbackSearchableFields?.map(field => ({
+      $or: tutorSearchableFields?.map(field => ({
         [field]: {
           $regex: searchTerm,
           $options: 'i',
@@ -63,12 +63,12 @@ const getAllFeedbacks = async (
   const whereCondition =
     andConditions?.length > 0 ? { $and: andConditions } : {};
 
-  const result = await Feedback.find(whereCondition)
+  const result = await Tutor.find(whereCondition)
     .sort(sortCondition)
     .skip(skip)
     .limit(limit);
 
-  const total = await Feedback.countDocuments(whereCondition);
+  const total = await Tutor.countDocuments(whereCondition);
 
   return {
     meta: {
@@ -80,50 +80,42 @@ const getAllFeedbacks = async (
   };
 };
 
-// Get Single Feedback
-const getSingleFeedback = async (id: string): Promise<IFeedback | null> => {
-  const result = await Feedback.findById(id);
+// Get Single Tutor
+const getSingleTutor = async (id: string): Promise<ITutor | null> => {
+  const result = await Tutor.findById(id);
 
   return result;
 };
 
-// Get Single user's Feedback
-const getMyFeedback = async (email: string): Promise<IFeedback | null> => {
-  const result = await Feedback.findById({ email });
-
-  return result;
-};
-
-const updateFeedback = async (
+const updateTutor = async (
   id: string,
-  payload: Partial<IFeedback>
-): Promise<IFeedback | null> => {
-  const isExist = await Feedback.findOne({ _id: id });
+  payload: Partial<ITutor>
+): Promise<ITutor | null> => {
+  const isExist = await Tutor.findOne({ _id: id });
   if (!isExist) {
-    throw new ApiError(httpStatus.BAD_REQUEST, 'Feedback not found');
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Tutor not found');
   }
 
-  const result = await Feedback.findOneAndUpdate({ _id: id }, payload, {
+  const result = await Tutor.findOneAndUpdate({ _id: id }, payload, {
     new: true,
   });
 
   return result;
 };
 
-// Delete Feedback
-const deleteFeedback = async (id: string): Promise<IFeedback | null> => {
-  const result = await Feedback.findByIdAndDelete(id);
+// Delete Tutor
+const deleteTutor = async (id: string): Promise<ITutor | null> => {
+  const result = await Tutor.findByIdAndDelete(id);
   if (!result) {
-    throw new ApiError(httpStatus.FORBIDDEN, 'Feedback Not Found');
+    throw new ApiError(httpStatus.FORBIDDEN, 'Tutor Not Found');
   }
   return result;
 };
 
-export const FeedbackService = {
-  createFeedback,
-  getAllFeedbacks,
-  getSingleFeedback,
-  getMyFeedback,
-  updateFeedback,
-  deleteFeedback,
+export const TutorService = {
+  createTutor,
+  getAllTutors,
+  getSingleTutor,
+  updateTutor,
+  deleteTutor,
 };

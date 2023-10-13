@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Request, RequestHandler, Response } from 'express';
-import { UpcomingServiceService } from './upcomingService.service';
+import { NotificationService } from './notification.service';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
-import { IUpcomingService } from './upcomingService.interface';
+import { INotification } from './notification.interface';
 import { paginationFields } from '../../../constants/pagination';
 import { Secret } from 'jsonwebtoken';
 import config from '../../../config';
 import { pick } from '../../../shared/pick';
 import { jwtHelper } from '../../../helper/jwtHelper';
 
-const createUpcomingService: RequestHandler = catchAsync(
+const createNotification: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     const token: any = req.headers.authorization;
     const verifiedUser = jwtHelper.verifyToken(
@@ -21,31 +21,31 @@ const createUpcomingService: RequestHandler = catchAsync(
 
     const { ...reviewData } = req.body;
 
-    const result = await UpcomingServiceService.createUpcomingService(
+    const result = await NotificationService.createNotification(
       reviewData,
       verifiedUser
     );
 
     // Send Response
-    sendResponse<IUpcomingService>(res, {
+    sendResponse<INotification>(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'UpcomingService Created Successfully',
+      message: 'Notification Created Successfully',
       data: result,
     });
   }
 );
 
-const getAllUpcomingServices: RequestHandler = catchAsync(
+const getAllNotifications: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     const paginationOptions = pick(req.query, paginationFields);
 
-    const result = await UpcomingServiceService.getAllUpcomingServices(
+    const result = await NotificationService.getAllNotifications(
       paginationOptions
     );
 
     // Send Response
-    sendResponse<IUpcomingService[]>(res, {
+    sendResponse<INotification[]>(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'Upcoming Service retrieved Successfully',
@@ -55,13 +55,26 @@ const getAllUpcomingServices: RequestHandler = catchAsync(
   }
 );
 
-const getSingleUpcomingService: RequestHandler = catchAsync(
+const getSingleNotification: RequestHandler = catchAsync(async (req, res) => {
+  const id = req.params.id;
+  const result = await NotificationService.getSingleNotification(id);
+
+  // Send Response
+  sendResponse<INotification>(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Single Upcoming Service retrived successfully',
+    data: result,
+  });
+});
+
+const getSingleUserNotifications: RequestHandler = catchAsync(
   async (req, res) => {
     const id = req.params.id;
-    const result = await UpcomingServiceService.getSingleUpcomingService(id);
+    const result = await NotificationService.getSingleUserNotifications(id);
 
     // Send Response
-    sendResponse<IUpcomingService>(res, {
+    sendResponse<INotification>(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'Single Upcoming Service retrived successfully',
@@ -70,16 +83,13 @@ const getSingleUpcomingService: RequestHandler = catchAsync(
   }
 );
 
-const updateUpcomingService: RequestHandler = catchAsync(async (req, res) => {
+const updateNotification: RequestHandler = catchAsync(async (req, res) => {
   const id = req.params.id;
   const updateData = req.body;
 
-  const result = await UpcomingServiceService.updateUpcomingService(
-    id,
-    updateData
-  );
+  const result = await NotificationService.updateNotification(id, updateData);
 
-  sendResponse<IUpcomingService>(res, {
+  sendResponse<INotification>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Upcoming Service updated successfully',
@@ -87,12 +97,12 @@ const updateUpcomingService: RequestHandler = catchAsync(async (req, res) => {
   });
 });
 
-const deleteUpcomingService: RequestHandler = catchAsync(async (req, res) => {
+const deleteNotification: RequestHandler = catchAsync(async (req, res) => {
   const id = req.params.id;
 
-  const result = await UpcomingServiceService.deleteUpcomingService(id);
+  const result = await NotificationService.deleteNotification(id);
 
-  sendResponse<IUpcomingService>(res, {
+  sendResponse<INotification>(res, {
     statusCode: httpStatus.OK,
     success: true,
     message: 'Upcoming Service deleted successfully',
@@ -100,10 +110,11 @@ const deleteUpcomingService: RequestHandler = catchAsync(async (req, res) => {
   });
 });
 
-export const UpcomingServiceController = {
-  createUpcomingService,
-  getAllUpcomingServices,
-  getSingleUpcomingService,
-  updateUpcomingService,
-  deleteUpcomingService,
+export const NotificationController = {
+  createNotification,
+  getAllNotifications,
+  getSingleNotification,
+  updateNotification,
+  deleteNotification,
+  getSingleUserNotifications,
 };

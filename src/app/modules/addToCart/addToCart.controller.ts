@@ -5,6 +5,7 @@ import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
 import { IAddToCart } from './addToCart.interface';
+import { ITutor } from '../tutor/tutor.interface';
 
 // Create AddToCart
 const createAddToCart: RequestHandler = catchAsync(
@@ -33,7 +34,7 @@ const getAllAddToCarts: RequestHandler = catchAsync(
     const result = await AddToCartService.getAllAddToCarts(user);
 
     // Send Response
-    sendResponse<IAddToCart[]>(res, {
+    sendResponse<ITutor[]>(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'Carts data retrieved Successfully',
