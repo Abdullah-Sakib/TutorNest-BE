@@ -26,5 +26,6 @@ export type ITutorFilters = {
   name?: string;
   location?: string;
   category?: string;
-  subject?: string;
+  minFee?: string;
+  maxFee?: string;
 };

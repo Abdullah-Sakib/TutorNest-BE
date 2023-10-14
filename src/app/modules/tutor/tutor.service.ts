@@ -31,7 +31,7 @@ const getAllTutors = async (
   paginationOptions: IPaginationOptions
 ): Promise<IGenericResponse<ITutor[]>> => {
   // Try not to use any
-  const { searchTerm, ...filtersData } = filters;
+  const { searchTerm, minFee, maxFee, ...filtersData } = filters;
 
   const andConditions = [];
 
@@ -44,6 +44,23 @@ const getAllTutors = async (
         },
       })),
     });
+  }
+
+  if (minFee || maxFee) {
+    const feeCondition: { fee?: { $gte?: number; $lte?: number } } = {};
+
+    if (minFee) {
+      feeCondition.fee = { $gte: Number(minFee) };
+    }
+
+    if (maxFee) {
+      if (!feeCondition.fee) {
+        feeCondition.fee = {};
+      }
+      feeCondition.fee.$lte = Number(maxFee);
+    }
+
+    andConditions.push(feeCondition);
   }
 
   if (Object.keys(filtersData).length) {

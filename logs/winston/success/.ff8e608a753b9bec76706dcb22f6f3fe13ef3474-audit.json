@@ -1,75 +1,75 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\.ff8e608a753b9bec76706dcb22f6f3fe13ef3474-audit.json",
+  "files": [
+    {
+      "date": 1697096886499,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-13-success.log",
+      "hash": "4417c58ffc6ef36fdd59294384cb993a68a12e28ecabd96dc69bf84aaacc7895"
     },
-    "auditLog": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\.ff8e608a753b9bec76706dcb22f6f3fe13ef3474-audit.json",
-    "files": [
-        {
-            "date": 1697096886499,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-13-success.log",
-            "hash": "4417c58ffc6ef36fdd59294384cb993a68a12e28ecabd96dc69bf84aaacc7895"
-        },
-        {
-            "date": 1697097759421,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-14-success.log",
-            "hash": "3ab076637aa63d81c7d98250719f8d116769eff866432a7866064e4a2999782e"
-        },
-        {
-            "date": 1697103976581,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-15-success.log",
-            "hash": "b71ef9015874bfb3018fb2ee912669821e12e12578cfa35e709ad0c5fc6211da"
-        },
-        {
-            "date": 1697105436765,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-16-success.log",
-            "hash": "afa7822cdbfa3cbd1395f63fac5713e0660cd0371f41a840c8cd51ce1e7ad302"
-        },
-        {
-            "date": 1697120913321,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-20-success.log",
-            "hash": "32c41e32d71cafec8d7cb5c03acde94871890bbc01c6d209299ca98088947d4b"
-        },
-        {
-            "date": 1697123545004,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-21-success.log",
-            "hash": "5f3746d9b530d62004db7de0c7c88d72970fac9a322e02cb563b5e423adf6064"
-        },
-        {
-            "date": 1697129954730,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-22-success.log",
-            "hash": "bdf164d9d8e78bb8df518723a797be5e4659adfa86419c3744b46d999ca455e9"
-        },
-        {
-            "date": 1697215100492,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-13-22-success.log",
-            "hash": "16ced72d95454a90f198f5c5052bc4099c4796356deff7f10eee821be3879bde"
-        },
-        {
-            "date": 1697217815153,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-13-23-success.log",
-            "hash": "9e524de19087cc4873f1a082ee67360acbc29c4c2b4edb0dac8a269dcb8ecb60"
-        },
-        {
-            "date": 1697220126613,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-00-success.log",
-            "hash": "f37960f7bbaec0c2c5875e1e43c927d27aa9542a2d7016a6d442e0feb444d3c3"
-        },
-        {
-            "date": 1697223646157,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-01-success.log",
-            "hash": "26d927d54a094cc59a3b819820140367f6c63bcbc7575dfd5ee11065285b7c17"
-        },
-        {
-            "date": 1697254009243,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-09-success.log",
-            "hash": "9d104157aab59d5a427c78ff9f8d1745c08596a727af63670b4b091947e28dcb"
-        },
-        {
-            "date": 1697256014917,
-            "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-10-success.log",
-            "hash": "c3523992d2195607482e165ffb15dbe78d64aea893e9bf25dfc891df0bd51e78"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1697097759421,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-14-success.log",
+      "hash": "3ab076637aa63d81c7d98250719f8d116769eff866432a7866064e4a2999782e"
+    },
+    {
+      "date": 1697103976581,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-15-success.log",
+      "hash": "b71ef9015874bfb3018fb2ee912669821e12e12578cfa35e709ad0c5fc6211da"
+    },
+    {
+      "date": 1697105436765,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-16-success.log",
+      "hash": "afa7822cdbfa3cbd1395f63fac5713e0660cd0371f41a840c8cd51ce1e7ad302"
+    },
+    {
+      "date": 1697120913321,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-20-success.log",
+      "hash": "32c41e32d71cafec8d7cb5c03acde94871890bbc01c6d209299ca98088947d4b"
+    },
+    {
+      "date": 1697123545004,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-21-success.log",
+      "hash": "5f3746d9b530d62004db7de0c7c88d72970fac9a322e02cb563b5e423adf6064"
+    },
+    {
+      "date": 1697129954730,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-12-22-success.log",
+      "hash": "bdf164d9d8e78bb8df518723a797be5e4659adfa86419c3744b46d999ca455e9"
+    },
+    {
+      "date": 1697215100492,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-13-22-success.log",
+      "hash": "16ced72d95454a90f198f5c5052bc4099c4796356deff7f10eee821be3879bde"
+    },
+    {
+      "date": 1697217815153,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-13-23-success.log",
+      "hash": "9e524de19087cc4873f1a082ee67360acbc29c4c2b4edb0dac8a269dcb8ecb60"
+    },
+    {
+      "date": 1697220126613,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-00-success.log",
+      "hash": "f37960f7bbaec0c2c5875e1e43c927d27aa9542a2d7016a6d442e0feb444d3c3"
+    },
+    {
+      "date": 1697223646157,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-01-success.log",
+      "hash": "26d927d54a094cc59a3b819820140367f6c63bcbc7575dfd5ee11065285b7c17"
+    },
+    {
+      "date": 1697254009243,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-09-success.log",
+      "hash": "9d104157aab59d5a427c78ff9f8d1745c08596a727af63670b4b091947e28dcb"
+    },
+    {
+      "date": 1697256014917,
+      "name": "D:\\WEB\\Level-2\\Milestone-7-Frontend\\TutorNest-BE\\logs\\winston\\success\\UMS-2023-10-14-10-success.log",
+      "hash": "c3523992d2195607482e165ffb15dbe78d64aea893e9bf25dfc891df0bd51e78"
+    }
+  ],
+  "hashType": "sha256"
 }
