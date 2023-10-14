@@ -64,7 +64,7 @@ const moduleRoutes = [
     router: ReviewRoutes,
   },
   {
-    path: 'upcoming-services',
+    path: '/upcoming-service',
     router: UpcomingServiceRoutes,
   },
 ];

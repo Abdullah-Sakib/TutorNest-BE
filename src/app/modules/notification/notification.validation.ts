@@ -22,8 +22,8 @@ const updateNotificationZodValidation = z.object({
   body: z.object({
     userId: z.string().optional(),
     title: z.string().optional(),
-    image: z.string().optional(),
     body: z.string().optional(),
+    type: z.enum([...types] as [string, ...string[]]).optional(),
   }),
 });
 

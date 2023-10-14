@@ -48,7 +48,7 @@ const getAllNotifications: RequestHandler = catchAsync(
     sendResponse<INotification[]>(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Upcoming Service retrieved Successfully',
+      message: 'Notification retrieved Successfully',
       meta: result.meta,
       data: result.data,
     });
@@ -63,21 +63,21 @@ const getSingleNotification: RequestHandler = catchAsync(async (req, res) => {
   sendResponse<INotification>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Single Upcoming Service retrived successfully',
+    message: 'Single Notification retrived successfully',
     data: result,
   });
 });
 
 const getSingleUserNotifications: RequestHandler = catchAsync(
   async (req, res) => {
-    const id = req.params.id;
+    const id = req.params.userId;
     const result = await NotificationService.getSingleUserNotifications(id);
 
     // Send Response
-    sendResponse<INotification>(res, {
+    sendResponse<INotification[]>(res, {
       statusCode: httpStatus.OK,
       success: true,
-      message: 'Single Upcoming Service retrived successfully',
+      message: 'Single Notification retrived successfully',
       data: result,
     });
   }
@@ -92,7 +92,7 @@ const updateNotification: RequestHandler = catchAsync(async (req, res) => {
   sendResponse<INotification>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Upcoming Service updated successfully',
+    message: 'Notification updated successfully',
     data: result,
   });
 });
@@ -105,7 +105,7 @@ const deleteNotification: RequestHandler = catchAsync(async (req, res) => {
   sendResponse<INotification>(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Upcoming Service deleted successfully',
+    message: 'Notification deleted successfully',
     data: result,
   });
 });

@@ -63,8 +63,8 @@ const getSingleNotification = async (
 
 const getSingleUserNotifications = async (
   id: string
-): Promise<INotification | null> => {
-  const result = await Notification.findById({ userId: id });
+): Promise<INotification[] | null> => {
+  const result = await Notification.find({ userId: id });
 
   return result;
 };

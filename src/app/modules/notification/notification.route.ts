@@ -13,10 +13,14 @@ router.post(
   NotificationController.createNotification
 );
 
-router.get('/:id', NotificationController.getSingleNotification);
+router.get(
+  '/:id',
+  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
+  NotificationController.getSingleNotification
+);
 
 router.get(
-  '/:userId',
+  '/:userId/my-notifications',
   auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.USER),
   NotificationController.getSingleUserNotifications
 );
@@ -34,6 +38,10 @@ router.patch(
   NotificationController.updateNotification
 );
 
-router.get('/', NotificationController.getAllNotifications);
+router.get(
+  '/',
+  auth(ENUM_USER_ROLE.ADMIN, ENUM_USER_ROLE.SUPER_ADMIN),
+  NotificationController.getAllNotifications
+);
 
 export const NotificationRoutes = router;
